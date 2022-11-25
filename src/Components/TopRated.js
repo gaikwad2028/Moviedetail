@@ -11,8 +11,8 @@ export default function Toprated() {
 
     React.useEffect(() => {
         // setLoading1(true)
-        const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=1`
-        console.log(url,"kjhgfdfghjk")
+        const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=${count}`
+        // console.log(url,"kjhgfdfghjk")
         const Fetchdata = async () => {
             try {
                 const data = await fetch(url);
@@ -25,45 +25,17 @@ export default function Toprated() {
             }
         }
         Fetchdata()
-    }, [])
+    }, [count])
     console.log("movie ", show)
 
-    const HandelNext=()=>{
-        setCount(count+1)
-        console.log(count)
-        const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=${count}`
-        console.log(url,"kjhgfdfghjk")
-        const Fetchdata = async () => {
-            try {
-                const data = await fetch(url);
-                const json = await data.json();
-                setShow(json)
-                setLoading1(true)
-            } catch (error) {
-                setShow(error)
-                setLoading1(false)
-            }
-        }
-        Fetchdata()
 
-    }
-
-    const HandelPre=()=>{
-        setCount(count-1)
-        console.log(count)
-        const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=${count}`
-        console.log(url,"kjhgfdfghjk")
-        const Fetchdata = async () => {
-            try {
-                const data = await fetch(url);
-                const json = await data.json();
-                setShow(json)
-                setLoading1(true)
-            } catch (error) {
-                console.log("error", error);
-            }
+    const HandelPre=(e)=>{
+        if (count==1){
+          setCount(1)
         }
-        Fetchdata()
+        else{
+            setCount(count-1)
+        }
     }
 
     return (
@@ -81,7 +53,7 @@ export default function Toprated() {
           <div className='Pageination'>
            <TbPlayerTrackNext className='pre' onClick={HandelPre}/>
            <p className='count'>loadmore</p>
-            <TbPlayerTrackNext className='next' onClick={HandelNext}/>
+           <TbPlayerTrackNext className='next' onClick={() => setCount(count + 1)} />
           </div>
             </>
     )

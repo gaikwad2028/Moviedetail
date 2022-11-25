@@ -126,10 +126,11 @@ img.card-img-top {
 
 
 p.card-rating {
-  background-color: #eac80c;
+  background-color: #1b217dbd;
   color: white;
   font-weight: bold;
   padding: 4px 13px;
+  box-shadow: 2px 2px 12px inset blueviolet;
   border-radius: 5px;
   font-size: 14px;
 }
@@ -467,6 +468,17 @@ span.detail_type {
 
 span.minutes {
   font-size: 9px;
+}
+
+p.card-text {
+  font-weight: 800;
+  font-size: 12px;
+}
+.card-rates {
+  font-size: 12px;
+}
+p.card-rating {
+  font-size: 12px;
 }
 }
 

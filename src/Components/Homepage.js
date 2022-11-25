@@ -12,32 +12,6 @@ export default function Homepage(props) {
 
     React.useEffect(() => {
         // setLoading1(true)
-        const url = `https://api.themoviedb.org/3/movie/popular?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=1`
-        console.log(url,"kjhgfdfghjk")
-        const Fetchdata = async () => {
-            try {
-                const data = await fetch(url);
-                const json = await data.json();
-                setShow(json)
-                setLoading1(true)
-            } catch (error) {
-                setShow(error)
-                setLoading1(false)
-            }
-        }
-        Fetchdata()
-    }, [])
-    // console.log("movie ", show)
-
-    const HandelNext=()=>{
-        setCount(count+1)
-        if (count<=0){
-            setCount(count+2)
-        }
-        else if(count<=-1){
-            setCount(count+2)
-        }
-        console.log(count,"handelnext")
         const url = `https://api.themoviedb.org/3/movie/popular?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=${count}`
         console.log(url,"kjhgfdfghjk")
         const Fetchdata = async () => {
@@ -52,34 +26,17 @@ export default function Homepage(props) {
             }
         }
         Fetchdata()
+    }, [count])
 
-    }
-
-    const HandelPre=(e,index)=>{
-         
-    setCount(count-1)
-    if(count<0){
-        console.log(count)
-        setCount(count+1)
-    }
-
-        console.log(count)
-        const url = `https://api.themoviedb.org/3/movie/popular?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=${count}`
-        console.log(url,"kjhgfdfghjk")
-        const Fetchdata = async () => {
-            try {
-                const data = await fetch(url);
-                const json = await data.json();
-                setShow(json)
-                setLoading1(true)
-            } catch (error) {
-                setShow(error)
-                setLoading1(false)
-            }
+    const HandelPre=(e)=>{
+        if (count==1){
+          setCount(1)
         }
-        Fetchdata()
+        else{
+            setCount(count-1)
+        }
     }
-// console.log(count,"loading1")
+   
     return (
      <>
    
@@ -94,9 +51,9 @@ export default function Homepage(props) {
             </div> :<Loading/>
 }
           <div className='Pageination'>
-           <TbPlayerTrackNext className='pre' onClick={HandelPre}/>
-            <p className='count'>loadmore</p>
-            <TbPlayerTrackNext className='next' onClick={HandelNext}/>
+          <TbPlayerTrackNext className='pre' onClick={HandelPre} />
+            <p className='count'>{count}</p>
+            <TbPlayerTrackNext className='next' onClick={() => setCount(count + 1)} />
           </div>
             </>
     )
