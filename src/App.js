@@ -1,7 +1,6 @@
 import './App.css';
 import Homepage from './Components/Homepage';
 import {Routes, Route } from "react-router-dom";
-import Searchbar from './Components/Searchbar';
 import Upcoming from './Components/Upcoming';
 import TopRated from './Components/TopRated';
 import Navbar from './Components/Navbar';
