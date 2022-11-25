@@ -5,7 +5,7 @@ import {MdCancel } from "react-icons/md";
 import Card from '../Card-component/Card';
 import { BsSearch } from "react-icons/bs";
 
-export default function Navbar(props) {
+export default function Searchbar(props) {
 
     const [open, setOpen] = React.useState(false)
     const [open1, setOpen1] = React.useState(false)
@@ -107,7 +107,7 @@ console.log(flag,"flag")
                 Search !== undefined && Search.results !== undefined && Search.results.length > 0 && <div className='search1'>
                     {
                         Search.results.map((res) => {
-                            return <Card Titel={res.original_title.toUpperCase()} Image1={"https://image.tmdb.org/t/p/w500" + res.backdrop_path} Rating={res.vote_average}></Card>
+                            return <NavLink to={`/Singelmoviepage/${res.id}`} onClick={header}><Card Titel={res.original_title.toUpperCase()} Image1={"https://image.tmdb.org/t/p/w500" + res.backdrop_path} Rating={res.vote_average}></Card></NavLink>
                         })
                     }
                 </div>

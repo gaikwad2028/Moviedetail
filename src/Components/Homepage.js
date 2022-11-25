@@ -3,7 +3,7 @@ import Card from '../Card-component/Card';
 import {TbPlayerTrackNext } from "react-icons/tb";
 import Loading from '../Card-component/Loading';
 import { NavLink } from 'react-router-dom';
-import Navbar from './Navbar';
+
 
 export default function Homepage(props) {
     const [show, setShow] = React.useState([])
@@ -11,7 +11,6 @@ export default function Homepage(props) {
     const [Loading1, setLoading1] = React.useState(false)
 
     React.useEffect(() => {
-        // setLoading1(true)
         const url = `https://api.themoviedb.org/3/movie/popular?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=${count}`
         console.log(url,"kjhgfdfghjk")
         const Fetchdata = async () => {

@@ -7,7 +7,7 @@ export default function DetailCard(props) {
             <div className='container'>
                <div className='detail-imgcontainer'>
                 <div className='detail-img'>
-                <img className='detail_imgs' src={props. Cardimg}></img>
+                <img className='detail_imgs' src={props. Cardimg} alt="cardimg"></img>
                 </div>
                 <div className='detail-info'>
                     <div className='detail_h1'><h1 className='detail_h1'>{props.Titel}</h1> <p>{props.Tagline}</p></div>
@@ -25,7 +25,7 @@ export default function DetailCard(props) {
                </div>
             </div>
             <div className='detail_img1'>
-            <img className='detail_imge' src={props. Homepage}></img>
+            <img className='detail_imge' src={props. Homepage} alt="cardimg"></img>
             </div>
         </div>
     </div>
