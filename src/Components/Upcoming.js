@@ -29,7 +29,7 @@ export default function Upcoming() {
 
 
     const HandelPre=(e)=>{
-        if (count==1){
+        if (count===1){
           setCount(1)
         }
         else{
@@ -44,7 +44,7 @@ export default function Upcoming() {
                 {show !== undefined && show.results !== undefined && show.results.length > 0 &&
                     show.results.map((res) => {
                         // console.log(res, "ressssssssssssssssssssssssssssssssssss")
-                        return <NavLink to={`/Singelmoviepage/${res.id}`}><Card Titel={res.original_title.toUpperCase()} Image1={"https://image.tmdb.org/t/p/w500" + res.backdrop_path} Rating={res.vote_average}></Card></NavLink>
+                        return <div className='Card_sub'><NavLink to={`/Singelmoviepage/${res.id}`}><Card Titel={res.original_title.toUpperCase()} Image1={"https://image.tmdb.org/t/p/w500" + res.backdrop_path} Rating={res.vote_average}></Card></NavLink></div>
 
                     })
                 }
