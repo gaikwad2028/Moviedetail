@@ -125,11 +125,13 @@ img.card-img-top {
 
 }
 
+
 .card {
   width: 16rem;
   text-align: center;
   overflow: hidden;
-  border: 1px solid white;
+  border: 1px solid #00a7ff;
+  border-radius: 5px;
 }
 
 .pre {
@@ -246,12 +248,11 @@ p.count {
 }
 
 span.minutes {
-  border: 1px solid white;
+  border: 1px solid #238cf1;
   padding: 3px;
   margin-right: 10px;
   border-radius: 5px;
 }
-
 .Detail {
   width: 100%;
   display: block;
@@ -259,21 +260,45 @@ span.minutes {
   padding: 2em;
 }
 
-h2.rating {
-  font-size: 20px;
-}
-
 h1.detail_h1 {
-  font-size: 29px;
+  font-size: 17px;
+  margin-bottom: 5px;
+  color: #00a7ff;
+  font-weight: 900;
 }
 
 p.overivewp {
   font-size: 15px;
+  line-height: 23px;
 }
 
 h1.overview_detais {
   margin: 4px 0px;
   font-size: 29px;
+  color:#00a7ff;
+  font-weight: 900;
+}
+
+span.rating1 {
+  color: #00a7ff;
+  margin-right: 4px;
+  font-size: 18px;
+}
+span.rat_num {
+  margin-left: 3px;
+  color:#00a7ff;;
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.card-body1 {
+  text-align: center;
+}
+
+span.date {
+  margin-left:6px;
+  /* color: white; */
 }
 
 .detail_img1 {
@@ -289,8 +314,8 @@ img.detail_imgs {
 
 .Overview {
   font-size: 14px;
+  margin-top: 1em;
 }
-
 .detail-info {
   display: flex;
   flex-direction: column;
@@ -322,8 +347,17 @@ img.card-img-top1 {
   justify-content: space-around;
 }
 
+span.role {
+  font-size: 16px;
+  margin-left: 4px;
+}
+
 p.card-text1 {
   margin: 5px auto;
+  background: #00a7ff;
+  padding: 4px;
+  text-align: center;
+  font-weight: 800;
 }
 
 h1.Card_name {
@@ -331,8 +365,9 @@ h1.Card_name {
   font-weight: 900;
   display: flex;
   justify-content: flex-start;
-  padding: 0 2em;
+  padding: 12px 2em;
   /* margin: 0; */
+  /* padding: 1em; */
 }
 
 .load_btn {
@@ -342,10 +377,12 @@ h1.Card_name {
   color: black;
 }
 
+
 button.Load_more {
   padding: 5px 10px;
-  color: black;
+  color: white;
   border: none;
+  background: #00a7ff;
   font-size: 15px;
   font-weight: 700;
   border-radius: 5px;
@@ -356,7 +393,7 @@ button.Load_more:hover {
 }
 
 .card1_details {
-  box-shadow: 0px 0px 5px;
+  box-shadow: 0px 0px 5px #00a7ff;
   padding: 9px;
   width: 14rem;
   border-radius: 11px;
@@ -367,6 +404,7 @@ button.Load_more:hover {
 .Error_disrciption {
   font-size: 14px;
 }
+
 
 .Error {
   position: relative;
@@ -538,6 +576,22 @@ button.Load_more:hover {
   p.card-rating {
     font-size: 12px;
   }
+
+  span.role {
+    font-size: 17px;
+    margin-left: 4px;
+    font-size: 12px;
+}
+span.charat {
+  font-weight: 700;
+  margin: 4px;
+  font-size: 13px;
+}
+span.charat {
+  font-weight: 700;
+  margin: 4px;
+  font-size: 12px;
+}
 }
 
 @media only screen and (min-width: 600px) {
@@ -684,7 +738,7 @@ button.Load_more:hover {
   }
 
   p {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .detail-img {
