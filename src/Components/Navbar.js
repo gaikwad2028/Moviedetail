@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdCancel } from "react-icons/md";
 import Card from '../Card-component/Card';
 import { BsSearch } from "react-icons/bs";
+import Loading from '../Card-component/Loading';
 
 export default function Searchbar(props) {
 
@@ -71,7 +72,7 @@ export default function Searchbar(props) {
         <>
             <div className='Navbar'>
                 <div className='Logo'>
-                    <h2 className='Moviedb'>MovieDb</h2>
+                    <h2 className='Moviedb'><NavLink to="/">MovieDb</NavLink></h2>
                 </div>
                 <div className='Nav-Contents'>
                     <ul>
@@ -83,14 +84,14 @@ export default function Searchbar(props) {
                 </div>
                 <div className='hidden'>
                     <div className='hidden_1'>
-                        <GiHamburgerMenu className='hamburger' style={{ display: open3 ? "block" : "none" }} onClick={Handelopen} />
+                        <GiHamburgerMenu className='hamburger' style={{ display: open3 ? "block" : "none"}} onClick={Handelopen} />
                         <MdCancel className='cancel' onClick={Handelopen2} style={{ display: open2 ? "block" : "none" }} />
                         <BsSearch onClick={Handelopen1}> </BsSearch>
                     </div>
                 </div>
             </div>
             {open && <div className='mobile-nav'>
-                <ul className='mob-content'>
+                <ul className='mob-content' >
                     <li><NavLink to="/" onClick={header}>Popular</NavLink></li>
                     <li><NavLink to="/toprated" onClick={header} >Top-Rated</NavLink></li>
                     <li><NavLink to="/upcoming" onClick={header}>Upcoming</NavLink></li>

@@ -50,9 +50,9 @@ export default function Homepage(props) {
             </div> :<Loading/>
 }
           <div className='Pageination'>
-          <TbPlayerTrackNext className='pre' onClick={HandelPre} />
+          <TbPlayerTrackNext className='pre' onClick={HandelPre} style={{cursor:"pointer"}} />
             <p className='count'>{count}</p>
-            <TbPlayerTrackNext className='next' onClick={() => setCount(count + 1)} />
+            <TbPlayerTrackNext className='next' onClick={() => setCount(count + 1)} style={{cursor:"pointer"}} />
           </div>
             </>
     )
